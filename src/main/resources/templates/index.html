@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload file</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 mt-5">
+            <div th:if="${message}">
+                <h2 th:text="${message}"/>
+            </div>
+            <form method="POST" enctype="multipart/form-data" action="/">
+                <div class="form-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input btn" id="customFile" name="file">
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST" enctype="multipart/form-data" action="/">
+                <div class="form-group files">
+                    <label>Upload Your File </label>
+                    <input type="file" class="form-control" multiple="" name="file">
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
